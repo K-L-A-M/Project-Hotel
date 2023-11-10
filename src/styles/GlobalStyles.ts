@@ -22,9 +22,10 @@ export const GlobalStyles = createGlobalStyle`
         --color-black: #000000;
         --color-gray: #B8B6B6;
         --color-blue: #6D6BEB;
-        --color-ligth-blue: #6D6BEB30;
+        --color-ligth-blue: #6D6BEB40;
         --color-dirty-white:#F3F3F3;
         --color-white: #FFFFFF;
+        --color-white-opacity: #FFFFFF50;
 
         /* border */
 
