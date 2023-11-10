@@ -15,6 +15,7 @@ export const StyledHeader = styled.header`
 
   .logo {
     font-size: 2.25rem;
+    text-transform: uppercase;
   }
 
   .menu_container {
