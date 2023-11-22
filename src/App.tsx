@@ -8,7 +8,7 @@ function App() {
   return (
     <>
       <GlobalStyles />
-      <Header />
+      {/* <Header /> */}
       <RoutesMain />
       <Footer />
     </>
