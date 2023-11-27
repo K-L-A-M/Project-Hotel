@@ -1,5 +1,5 @@
 <body>
-  <h1>Hotel Management System</h1>
+  <h1>KLAM HOTEL FRONT END PART</h1>
 
   <p>Este é um projeto de sistema de gerenciamento de hotel com funcionalidades básicas, como login, cadastro de usuários e integração com uma API para alimentar dados.</p>
 
