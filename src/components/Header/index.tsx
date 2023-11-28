@@ -1,17 +1,20 @@
 import { StyledHeader } from "./styles";
 import { FaRegHeart } from 'react-icons/fa';
 import { PiUserCircleFill } from 'react-icons/pi';
+import { useNavigate } from "react-router-dom";
+import logo from "../../assets/logo_simples.png"
 
 export const Header = () => {
+    const navigate = useNavigate();
     return (
         <StyledHeader>
-            <p className="logo">logo</p>
+            <img src={logo} alt="Logo Hotel" />
             <nav className="menu_container">
                 <div>
                    <FaRegHeart size={22} />
                    <p>Favoritos</p>
                 </div>
-                <div>
+                <div onClick={()=>navigate("/login")}>
                     <PiUserCircleFill size={34} />
                     <p>Fazer Login</p>
                 </div>

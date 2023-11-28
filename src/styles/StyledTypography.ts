@@ -5,10 +5,10 @@ export const StyledTypography = styled.p<Itypography>`
     color: ${({ color }) => color || 'var(--color-black)'};
 
     ${({ type }) => {
-        if (type === "logo") {
+        if (type === "title") {
             return css`
                 font-family: var(--font-details);
-                font-size: 2.25rem;
+                font-size: 2rem;
                 text-transform: uppercase;
             `;
         } else if (type === "menu") {

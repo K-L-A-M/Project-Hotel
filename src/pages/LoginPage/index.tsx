@@ -10,9 +10,12 @@ import {
 } from "../../schema/formLoginSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { useNavigate } from "react-router-dom";
+import logo from "../../assets/logo_completo.png";
+import { useContext, useState } from "react";
+import { AdminContext } from "../../providers/AdminContext";
 
 export const LoginPage = () => {
-  // const [ isLoading, setIsLoading ] = useState<boolean>(false);
+  const [isLoading, setIsLoading] = useState<boolean>(false);
   const {
     register,
     handleSubmit,
@@ -21,40 +24,45 @@ export const LoginPage = () => {
   } = useForm<TFormLoginValues>({
     resolver: zodResolver(formLoginSchema),
   });
+  const { login } = useContext(AdminContext);
 
   const navigate = useNavigate();
 
   const onSubmit: SubmitHandler<TFormLoginValues> = (data) => {
-    console.log(data);
+    login(data, setIsLoading);
     reset();
   };
 
   return (
     <StyledLoginPage>
-      <StyledTypography type="logo" weight={700} onClick={()=>navigate('/')}>
-        logo
-      </StyledTypography>
+      <img src={logo} onClick={() => navigate("/")} alt="Logo Hotel" />
       <form onSubmit={handleSubmit(onSubmit)}>
-        <StyledTypography type="logo" weight={700}>
+        <StyledTypography type="title" weight={700}>
           login
         </StyledTypography>
         <Input
           inputId="email"
-          label="Seu endereco de email"
+          label="E-mail"
           helper={errors.email?.message}
-          placeholder="Digite o seu email..."
+          placeholder="E-mail de login"
           {...register("email")}
         />
         <Input
           password={true}
           inputId="password"
-          label="Sua senha aqui"
+          label="Senha"
           helper={errors.password?.message}
-          placeholder="Digite a sua senha..."
+          placeholder="Digite a sua senha"
           {...register("password")}
         />
-        <StyledButton type="submit" width={412} height={57} radius={10}>
-          Avançar
+        <StyledButton
+          type="submit"
+          width={412}
+          height={57}
+          radius={10}
+          disabled={isLoading}
+        >
+          {isLoading ? "Loading..." : "Avançar"}
         </StyledButton>
         <div className="container_register">
           <StyledTypography>Ainda não possui uma conta?</StyledTypography>
@@ -65,9 +73,9 @@ export const LoginPage = () => {
             width={412}
             height={57}
             radius={10}
-            onClick={()=>navigate('/register')}
+            onClick={() => navigate("/register")}
           >
-            Cadastre-se
+            Cadastrar
           </StyledButton>
         </div>
       </form>

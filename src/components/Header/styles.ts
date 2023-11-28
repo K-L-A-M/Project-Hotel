@@ -13,9 +13,8 @@ export const StyledHeader = styled.header`
   padding: 0 12.1875rem;
   font-family: var(--font-details);
 
-  .logo {
-    font-size: 2.25rem;
-    text-transform: uppercase;
+  >img {
+    width: 7rem;
   }
 
   .menu_container {

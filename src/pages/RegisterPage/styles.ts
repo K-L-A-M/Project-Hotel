@@ -10,22 +10,23 @@ export const StyledRegisterPage = styled.main`
     padding-top: 2rem;
     padding-bottom: 8rem;
 
-    >p {
-        margin-bottom: 2.5rem;
+    >img {
+        margin-bottom: 2rem;
+        width: 10rem;
         cursor: pointer;
     }
 
     >form {
         border: var(--border);
         border-radius: .625rem;
-        padding: 5rem 5.375rem 5.5625rem 5.4375rem;
+        padding: 2rem 3.5rem 2.5rem 3.5rem;
         display: flex;
         flex-direction: column;
         align-items: flex-start;
         gap: 1.375rem;
 
         >p:first-child {
-            margin-bottom: 2.625rem;
+            margin-bottom: 1rem;
         }
 
         >button:first-of-type {
